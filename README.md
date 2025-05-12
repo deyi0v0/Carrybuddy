@@ -1,5 +1,20 @@
 # Travel Packing Assistant
 
+**AWS CloudHacks 2025 Submission**
+
+This repository was created for the AWS CloudHacks 2025 hackathon.
+
+## Technologies Used
+- AWS Bedrock
+- Claude 3.5 Haiku
+- Streamlit
+- Weather API
+
+## Team Members
+- Deyi Chen
+- Junhao Che
+- Andrew Shi
+
 A smart travel packing assistant built with Streamlit and AWS Bedrock's Claude model, integrated with weather data to generate personalized packing lists.
 
 ## Features
@@ -18,11 +33,16 @@ A smart travel packing assistant built with Streamlit and AWS Bedrock's Claude m
    ```bash
    pip install -r requirements.txt
    ```
-3. Create a `.env` file in the root directory and add your AWS credentials:
-   ```
-   AWS_ACCESS_KEY_ID=your_access_key_here
-   AWS_SECRET_ACCESS_KEY=your_secret_key_here
-   AWS_REGION=your_aws_region_here  # e.g., us-east-1
+3. Create a `streamlit/secrets.toml` file in the root directory and add your AWS credentials:
+   ```toml
+   [aws]
+   aws_access_key_id = "your_access_key_here"
+   aws_secret_access_key = "your_secret_key_here"
+   aws_region = "your_aws_region_here"  # e.g., us-east-1
+   aws_session_token = "your_session_token_here"  # optional
+
+   [weather_api]
+   api_key = "your_weather_api_key_here"
    ```
 4. Make sure you have access to AWS Bedrock service and the Claude model
 5. Run the Streamlit app:
@@ -47,6 +67,17 @@ A smart travel packing assistant built with Streamlit and AWS Bedrock's Claude m
 - **Activity-Based Recommendations**: Considers your planned activities when generating the packing list
 - **Interactive Chat**: Ask questions about your packing list or get additional recommendations
 - **Smart Suggestions**: Uses AI to provide context-aware packing recommendations
+
+## Demo
+
+### 1. Enter Trip Details
+![Trip Details Form](images/packing-list-form.png)
+
+### 2. Packing List Result
+![Packing List Result](images/packing-list-result.png)
+
+### 3. Detailed Packing List
+![Packing List Details](images/packing-list-details.png)
 
 ## Note
 
